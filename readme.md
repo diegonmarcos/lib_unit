@@ -1,3 +1,14 @@
+# USAGE
+``` bash
+https://github.com/diegonmarcos/LibUnit.git
+```
+
+- if `not a library`, source codes with headers inside of `src`  
+- if `a library`, source codes with headers inside of `src_lib`  
+- run `make`
+
+---
+# RM
 It's great you're planning your C code tester with user stories and a roadmap! Here's a breakdown to help structure your project:
 
 **I. User Stories**
