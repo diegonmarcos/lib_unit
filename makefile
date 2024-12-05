@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dinepomu <dinepomu@student.42.fr>          +#+  +:+       +#+         #
+#    By: dinepomu <dinepomu@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/20 18:47:35 by dinepomu          #+#    #+#              #
-#    Updated: 2024/12/05 14:59:50 by dinepomu         ###   ########.fr        #
+#    Updated: 2024/12/05 15:38:19 by dinepomu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -88,6 +88,7 @@ $(NAME):
 lib: $(LIB)
 
 $(LIB_OBJ_DIR)/%.o:	$(LIB_SRC_DIR)/%.c $(LIB_INCL)
+					@echo "${DARK_YELLOW} --- COMPILING LIBUNIT --- $(DEF_COLOR)"
 					@mkdir -p $(LIB_OBJ_DIR)
 					@echo "${BLUE} > $(BROWN)Compiling   ${MAGENTA}→   $(CYAN)$< $(DEF_COLOR)"
 					@$(CC) $(CFLAGS) -c $< -o $@
