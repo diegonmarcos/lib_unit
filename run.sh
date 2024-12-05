@@ -22,6 +22,7 @@ elif [[ $input == "2" ]]; then
 
 # Run mine make
 	make
+	make fclean
 
 elif [[ $input == "3" ]]; then
 	echo "3"
