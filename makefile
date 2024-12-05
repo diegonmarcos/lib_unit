@@ -6,7 +6,7 @@
 #    By: dinepomu <dinepomu@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/20 18:47:35 by dinepomu          #+#    #+#              #
-#    Updated: 2024/12/05 15:49:08 by dinepomu         ###   ########.fr        #
+#    Updated: 2024/12/05 16:59:57 by dinepomu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -87,7 +87,7 @@ $(NAME):
 
 lib: $(LIB)
 
-$(LIB_OBJ_DIR)/%.o:	@echo "${DARK_YELLOW} --- COMPILING LIBUNIT --- $(DEF_COLOR)" $(LIB_SRC_DIR)/%.c $(LIB_INCL)
+$(LIB_OBJ_DIR)/%.o:	$(LIB_SRC_DIR)/%.c $(LIB_INCL)
 					@mkdir -p $(LIB_OBJ_DIR)
 					@echo "${BLUE} > $(BROWN)Compiling   ${MAGENTA}→   $(CYAN)$< $(DEF_COLOR)"
 					@$(CC) $(CFLAGS) -c $< -o $@
