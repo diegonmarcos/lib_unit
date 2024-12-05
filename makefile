@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dinepomu <dinepomu@student.42berlin.de>    +#+  +:+       +#+         #
+#    By: dinepomu <dinepomu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/20 18:47:35 by dinepomu          #+#    #+#              #
-#    Updated: 2024/12/04 17:31:44 by dinepomu         ###   ########.fr        #
+#    Updated: 2024/12/05 14:19:34 by dinepomu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,7 +57,7 @@ NAME = a.out
 BIN_DIR = bin
 EXEC = $(BIN_DIR)/$(NAME)
 
-MAIN_SRC_DIR = src_tester
+MAIN_SRC_DIR = src
 MAIN_OBJ_DIR = obj
 MAIN_SRC = $(wildcard $(MAIN_SRC_DIR)/*.c)
 MAIN_OBJ = $(patsubst $(MAIN_SRC_DIR)/%.c,$(MAIN_OBJ_DIR)/%.o,$(MAIN_SRC))
