@@ -45,7 +45,10 @@ int main (void)
 	//TEST 1
 	char str2[] = " ";
 	printf("(%d) | ", printf("Expected:%s",str2) - 9) == ft_printf("(%d) | ",ft_printf("Test:%s",str2) - 5) ? printf(GREEN"OK"DEF_COLOR"\n") : printf(RED"KO"DEF_COLOR"\n");
-	//TEST 1
+	
+	
+	
+	//TEST Malloc test
 	char *ptr;
 	ptr = (char *) malloc(10 * sizeof(char));
 	strcpy(ptr, "Hello");
