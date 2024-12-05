@@ -20,9 +20,14 @@ elif [[ $input == "2" ]]; then
 	make -C lib/src_lib/printfTester-master fclean
 	rm -rf lib/src_lib/printfTester-master
 
-# Run mine make
+# Find all .c files in src_tester/printf_t and copy them to src
+	rm -f src/*
+	find src_tester/printf_t -name "*.*" -exec cp {} src \;
+
+# Run libunit make
 	make
 	make fclean
+	rm -f src/*
 
 elif [[ $input == "3" ]]; then
 	echo "3"
