@@ -36,7 +36,7 @@ int main (void)
 	printf("\n --- TESTS FOR PRINTF ---\n");
 	printf(" ------------------------"DEF_COLOR"\n");
 
-    printf("\n// --- TEST FOR %%s ---\n");
+    printf(YELLOW"\n// --- TEST FOR %%s ---"DEF_COLOR"\n");
     char *str;
     // Test 1: Basic string
     str = "Hello, world!";
@@ -54,38 +54,38 @@ int main (void)
     str = "This is a very long string that should exceed the buffer size to test if your ft_printf handles it correctly.";
     printf("(%d) | ", printf("Expected:%s\n", str) - 9) == ft_printf("(%d) | ", ft_printf("Test:%s\n", str) - 5) ? printf(GREEN"OK"DEF_COLOR"\n") : printf(RED"KO"DEF_COLOR"\n");
 
-    printf("\n// --- TEST FOR %%d/%%i ---\n");
+    printf(YELLOW"\n// --- TEST FOR %%d/%%i ---"DEF_COLOR"\n");
     printf("(%d) | ", printf("Expected:%d", 12345) - 9) == ft_printf("(%d) | ", ft_printf("Test:%d", 12345) - 5) ? printf(GREEN"OK"DEF_COLOR"\n") : printf(RED"KO"DEF_COLOR"\n");
     printf("(%d) | ", printf("Expected:%i", -12345) - 9) == ft_printf("(%d) | ", ft_printf("Test:%i", -12345) - 5) ? printf(GREEN"OK"DEF_COLOR"\n") : printf(RED"KO"DEF_COLOR"\n");
     printf("(%d) | ", printf("Expected:%d", 0) - 9) == ft_printf("(%d) | ", ft_printf("Test:%d", 0) - 5) ? printf(GREEN"OK"DEF_COLOR"\n") : printf(RED"KO"DEF_COLOR"\n");
     printf("(%d) | ", printf("Expected:%d", 2147483647) - 9) == ft_printf("(%d) | ", ft_printf("Test:%d", 2147483647) - 5) ? printf(GREEN"OK"DEF_COLOR"\n") : printf(RED"KO"DEF_COLOR"\n");
     //printf("(%d) | ", printf("Expected:%d", -2147483648) - 9) == ft_printf("(%d) | ", ft_printf("Test:%d", -2147483648) - 5) ? printf(GREEN"OK"DEF_COLOR"\n") : printf(RED"KO"DEF_COLOR"\n");
 
-    printf("\n// --- TEST FOR %%p ---\n");
+    printf(YELLOW"\n// --- TEST FOR %%p ---"DEF_COLOR"\n");
     int a = 42;
     int *ptr = &a;
     printf("(%d) | ", printf("Expected:%p", ptr) - 9) == ft_printf("(%d) | ", ft_printf("Test:%p", ptr) - 5) ? printf(GREEN"OK"DEF_COLOR"\n") : printf(RED"KO"DEF_COLOR"\n");
     printf("(%d) | ", printf("Expected:%p", NULL) - 9) == ft_printf("(%d) | ", ft_printf("Test:%p", NULL) - 5) ? printf(GREEN"OK"DEF_COLOR"\n") : printf(RED"KO"DEF_COLOR"\n");
 
 
-    printf("\n// --- TEST FOR %%u ---\n");
+    printf(YELLOW"\n// --- TEST FOR %%u ---"DEF_COLOR"\n");
     printf("(%d) | ", printf("Expected:%u", 12345) - 9) == ft_printf("(%d) | ", ft_printf("Test:%u", 12345) - 5) ? printf(GREEN"OK"DEF_COLOR"\n") : printf(RED"KO"DEF_COLOR"\n");
     printf("(%d) | ", printf("Expected:%u", 0) - 9) == ft_printf("(%d) | ", ft_printf("Test:%u", 0) - 5) ? printf(GREEN"OK"DEF_COLOR"\n") : printf(RED"KO"DEF_COLOR"\n");
     //printf("(%d) | ", printf("Expected:%u", 4294967295) - 9) == ft_printf("(%d) | ", ft_printf("Test:%u", 4294967295) - 5) ? printf(GREEN"OK"DEF_COLOR"\n") : printf(RED"KO"DEF_COLOR"\n");
 
 
-    printf("\n// --- TEST FOR %%X ---\n");
+    printf(YELLOW"\n// --- TEST FOR %%X ---"DEF_COLOR"\n");
     printf("(%d) | ", printf("Expected:%X", 42) - 9) == ft_printf("(%d) | ", ft_printf("Test:%X", 42) - 5) ? printf(GREEN"OK"DEF_COLOR"\n") : printf(RED"KO"DEF_COLOR"\n");
     printf("(%d) | ", printf("Expected:%X", 12345) - 9) == ft_printf("(%d) | ", ft_printf("Test:%X", 12345) - 5) ? printf(GREEN"OK"DEF_COLOR"\n") : printf(RED"KO"DEF_COLOR"\n");
     printf("(%d) | ", printf("Expected:%X", 0) - 9) == ft_printf("(%d) | ", ft_printf("Test:%X", 0) - 5) ? printf(GREEN"OK"DEF_COLOR"\n") : printf(RED"KO"DEF_COLOR"\n");
 
 
-    printf("\n// --- TEST FOR %%x ---\n");
+    printf(YELLOW"\n// --- TEST FOR %%x ---"DEF_COLOR"\n");
     printf("(%d) | ", printf("Expected:%x", 42) - 9) == ft_printf("(%d) | ", ft_printf("Test:%x", 42) - 5) ? printf(GREEN"OK"DEF_COLOR"\n") : printf(RED"KO"DEF_COLOR"\n");
     printf("(%d) | ", printf("Expected:%x", 12345) - 9) == ft_printf("(%d) | ", ft_printf("Test:%x", 12345) - 5) ? printf(GREEN"OK"DEF_COLOR"\n") : printf(RED"KO"DEF_COLOR"\n");
     printf("(%d) | ", printf("Expected:%x", 0) - 9) == ft_printf("(%d) | ", ft_printf("Test:%x", 0) - 5) ? printf(GREEN"OK"DEF_COLOR"\n") : printf(RED"KO"DEF_COLOR"\n");
 
-	printf("\n// --- TEST FOR %%c ---\n");
+	printf(YELLOW"\n// --- TEST FOR %%c ---"DEF_COLOR"\n");
     printf("(%d) | ", printf("Expected:%c", 'A') - 9) == ft_printf("(%d) | ", ft_printf("Test:%c", 'A') - 5) ? printf(GREEN"OK"DEF_COLOR"\n") : printf(RED"KO"DEF_COLOR"\n");
     printf("(%d) | ", printf("Expected:%c", '\t') - 9) == ft_printf("(%d) | ", ft_printf("Test:%c", '\t') - 5) ? printf(GREEN"OK"DEF_COLOR"\n") : printf(RED"KO"DEF_COLOR"\n");
     printf("(%d) | ", printf("Expected:%c", '\0') - 9) == ft_printf("(%d) | ", ft_printf("Test:%c", '\0') - 5) ? printf(GREEN"OK"DEF_COLOR"\n") : printf(RED"KO"DEF_COLOR"\n");
