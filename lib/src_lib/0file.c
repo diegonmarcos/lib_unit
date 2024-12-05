@@ -1,23 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   0file.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dinepomu <dinepomu@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: dinepomu <dinepomu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/01 14:59:11 by dnepomuc          #+#    #+#             */
-/*   Updated: 2024/11/20 18:55:15 by dinepomu         ###   ########.fr       */
+/*   Created: 2024/07/17 17:23:43 by dinepomu          #+#    #+#             */
+/*   Updated: 2024/12/05 14:21:26 by dinepomu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
