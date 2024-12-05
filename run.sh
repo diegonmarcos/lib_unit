@@ -17,8 +17,8 @@ elif [[ $input == "2" ]]; then
 	sleep 1
 
  # Delete the folder and clean object files
-	rm -rf lib/src_lib/printfTester-master
 	make -C lib/src_lib/printfTester-master fclean
+	rm -rf lib/src_lib/printfTester-master
 
 # Run mine make
 	make
