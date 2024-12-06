@@ -6,12 +6,12 @@ if [ $# -eq 0 ]; then  # Check if no arguments are provided
   echo "  -1b: Run libft-tester"
   echo "  -1c: Run libft-unit-test"
   echo "  -1d: Run Francinette"
-  echo "  -2: Run printfTester-master"
-  echo "  -3: Run gnl_tester"
-  echo "  -4: Run fdf_tester"
-  echo "  -5: Run minitalk_tester"
-  echo "  -6: Run pipex_tester"
-  echo "  -r: Delete Tester folders"
+  echo "  -2 : Run printfTester-master"
+  echo "  -3 : Run gnl_tester"
+  echo "  -4 : Run fdf_tester"
+  echo "  -5 : Run minitalk_tester"
+  echo "  -6 : Run pipex_tester"
+  echo "  -r : Delete Tester folders"
   exit 1
 fi
 
@@ -141,12 +141,12 @@ while [[ $# -gt 0 ]]; do
 		echo "  -1b: Run libft-tester"
 		echo "  -1c: Run libft-unit-test"
 		echo "  -1d: Run Francinette"
-		echo "  -2: Run printfTester-master"
-		echo "  -3: Run gnl_tester"
-		echo "  -4: Run fdf_tester"
-		echo "  -5: Run minitalk_tester"
-		echo "  -6: Run pipex_tester"
-		echo "  -r: Delete Tester folders"
+		echo "  -2 : Run printfTester-master"
+		echo "  -3 : Run gnl_tester"
+		echo "  -4 : Run fdf_tester"
+		echo "  -5 : Run minitalk_tester"
+		echo "  -6 : Run pipex_tester"
+		echo "  -r : Delete Tester folders"
 		exit 1
 		;;
   esac
