@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <fcntl.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 char	*get_next_line(int fd);
 #include "get_next_line.h"
@@ -17,7 +18,7 @@ int	main(void)
 	fd3 = open("../src_tester/gnl_t/tests/corrupted_file.txt", O_RDONLY);
 
 	printf("BUFFER_SIZE: %d\n", BUFFER_SIZE);
-
+	
 	i = 1;
 	printf("##############FIRST FILE\n");
 	while ((line = get_next_line(fd1)))
