@@ -74,7 +74,7 @@ while [[ $# -gt 0 ]]; do
 		;;
 	-2)
 		# printfTester-master
-		echo "Running printfTester-master..." # Replace this with your command
+		echo "Running printfTester-master..."
 		# PRINTF TESTER
 		## printf_tester
 		### Find all .c files in src_tester/printf_t and copy them to src
@@ -104,7 +104,8 @@ while [[ $# -gt 0 ]]; do
       # gnl_tester
 	   echo "Running gnl_tester..."
       ## copy src folder (if needed)
-      # ... your code here ...
+		find src_tester/gnl_t/tester -name "*.*" -exec cp {} src \;
+		make
      
       shift
       ;;
@@ -112,7 +113,6 @@ while [[ $# -gt 0 ]]; do
       # fdf_tester
 	  echo "Running fdf_tester..." # Replace this with your command
       ## copy src folder (if needed)
-      # ... your code here ...
       shift
       ;;
     -5)

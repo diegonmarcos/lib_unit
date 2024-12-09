@@ -6,7 +6,7 @@
 #    By: dinepomu <dinepomu@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/20 18:47:35 by dinepomu          #+#    #+#              #
-#    Updated: 2024/12/05 16:59:57 by dinepomu         ###   ########.fr        #
+#    Updated: 2024/12/09 15:47:30 by dinepomu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,15 +80,26 @@ MAKEFLAGS += --no-print-directory
 all: $(NAME)
 
 $(NAME):	
+		@$(MAKE) hello
 		@$(MAKE) lib 
 		@$(MAKE) main 
 		@$(MAKE) run
 
 
+hello: 
+		@echo "\n--------------------------------"
+		@echo "HELLO"
+		@echo "--------------------------------"
+		@echo "$(YELLOW)Hello, $(USER)!"
+		@echo "This is a simple Makefile for C projects.\n$(DEF_COLOR)"
+		@echo "\n--------------------------------"
+		@echo "1. LIBRARY"
+		@echo "--------------------------------"
 lib: $(LIB)
 
 $(LIB_OBJ_DIR)/%.o:	$(LIB_SRC_DIR)/%.c $(LIB_INCL)
 					@mkdir -p $(LIB_OBJ_DIR)
+
 					@echo "${BLUE} > $(BROWN)Compiling   ${MAGENTA}→   $(CYAN)$< $(DEF_COLOR)"
 					@$(CC) $(CFLAGS) -c $< -o $@
 
@@ -102,6 +113,9 @@ main: $(EXEC)
 
 $(MAIN_OBJ_DIR)/%.o:	$(MAIN_SRC_DIR)/%.c $(MAIN_INCL)
 						@mkdir -p $(MAIN_OBJ_DIR)
+						@echo "\n--------------------------------"
+						@echo "2. OBJECTS AND EXECUTABLE"
+						@echo "--------------------------------"
 						@echo "${BLUE} > $(BROWN)Compiling   ${MAGENTA}→   $(CYAN)$< $(DEF_COLOR)"
 						@$(CC) $(CFLAGS) -c $< -o $@
 
@@ -113,7 +127,11 @@ $(EXEC):	$(MAIN_OBJ) $(LIBS)
 			@$(MAKE) incl_main
 
 run:
-		@./$(EXEC)
+		@echo "\n--------------------------------"
+		@echo "3. RUNNING $(NAME)"
+		@echo "--------------------------------\n"
+		@cd bin && ./$(NAME)
+#		@./$(EXEC)
 
 dbg:	$(MAIN_OBJ) $(LIBS)
 		@mkdir -p $(BIN_DIR)
@@ -134,10 +152,12 @@ incl_lib:
 	done
 
 incl_main:
-	@mkdir -p incl
-	@for file in $(MAIN_SRC_DIR)/*.h; do \
-		ln -sf "../$(basename $$file)" "incl/"; \
-	done
+	@if [ -n "$(wildcard $(MAIN_SRC_DIR)/*.h)" ]; then \
+		mkdir -p incl; \
+		for file in $(MAIN_SRC_DIR)/*.h; do \
+			ln -sf "../$(basename $$file)" "incl/"; \
+		done; \
+	fi
 
 clean:
 		@rm -rf $(LIB_OBJ_DIR) $(MAIN_OBJ_DIR)
