@@ -10,12 +10,13 @@ https://github.com/diegonmarcos/LibUnit.git
 	- if `a library`(wihtout main.c), source codes with **headers** inside of `src_lib`  
 
 2. RUN
-- run `make`
+- run `make`  
+
 
 ---
 # RM
 It's great you're planning your C code tester with user stories and a roadmap! Here's a breakdown to help structure your project:
-
+<details>
 **I. User Stories**
 
 * **US 1:** As a developer, I want the tester to identify all input strings, pointers, and lists so that I can track their initial values.
@@ -173,3 +174,40 @@ This structured approach using user stories, a function hierarchy, and a roadmap
     *  Prints the formatted output to the console (or potentially to a file).
 
 This ASCII map provides a visual representation of the function hierarchy and the flow of data within your C code tester project. You can further expand it by adding more specific functions or helper functions as needed.
+
+</details>
+  
+---
+.  
+.  
+.  
+
+# Thank you !
+  
+
+``` 
+							
+   696     696  96969      _=_      9696969  69    696
+     9696    969696       (-_-)      696969    6969
+        96969696          _) (_          69696969
+           96            /__/  \            69
+           69          _(<_   / )_          96
+          6969        (__\_\_|_/__)        9696
+
+
+```
+
+------------------------------------------------
+
+
+
+
+```
+       __  
+     >(' )  
+       )/  
+      /(  
+     /  `----/  
+jgs  \  ~=- /  
+   ~^~^~^~^~^~^~^
+```
