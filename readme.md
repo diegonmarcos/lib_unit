@@ -2,9 +2,14 @@
 ``` bash
 https://github.com/diegonmarcos/LibUnit.git
 ```
+1. SOURCE CODE
+- EXEC
+	- if `not a library`(with a main.c), source codes with **headers** inside of `src`  
 
-- if `not a library`, source codes with headers inside of `src`  
-- if `a library`, source codes with headers inside of `src_lib`  
+- LIB
+	- if `a library`(wihtout main.c), source codes with **headers** inside of `src_lib`  
+
+2. RUN
 - run `make`
 
 ---
