@@ -6,7 +6,7 @@
 #    By: dinepomu <dinepomu@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/20 18:47:35 by dinepomu          #+#    #+#              #
-#    Updated: 2024/12/09 16:15:11 by dinepomu         ###   ########.fr        #
+#    Updated: 2024/12/10 13:03:49 by dinepomu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,6 +69,7 @@ MAIN_INCL = $(wildcard incl/*.h)
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
+INCLUDES = -I ./src -I ./lib/src_lib
 AR = ar rcs
 DEBUG = -g -fsanitize=address -lasan
 MAKEFLAGS += --no-print-directory
@@ -99,9 +100,8 @@ lib: $(LIB)
 
 $(LIB_OBJ_DIR)/%.o:	$(LIB_SRC_DIR)/%.c $(LIB_INCL)
 					@mkdir -p $(LIB_OBJ_DIR)
-
 					@echo "${BLUE} > $(BROWN)Compiling   ${MAGENTA}→   $(CYAN)$< $(DEF_COLOR)"
-					@$(CC) $(CFLAGS) -c $< -o $@
+					@$(CC) $(INCLUDES) $(CFLAGS) -c $< -o $@
 
 $(LIB):	$(LIB_OBJ)
 		@echo "\n$(GREEN) Created Objects: *.o ✓ $(DEF_COLOR)"
@@ -117,7 +117,7 @@ $(MAIN_OBJ_DIR)/%.o:	$(MAIN_SRC_DIR)/%.c $(MAIN_INCL)
 						@echo "2. OBJECTS AND EXECUTABLE"
 						@echo "--------------------------------"
 						@echo "${BLUE} > $(BROWN)Compiling   ${MAGENTA}→   $(CYAN)$< $(DEF_COLOR)"
-						@$(CC) $(CFLAGS) -c $< -o $@
+						@$(CC) $(INCLUDES) $(CFLAGS) -c $< -o $@
 
 $(EXEC):	$(MAIN_OBJ) $(LIBS)
 			@mkdir -p $(BIN_DIR)
