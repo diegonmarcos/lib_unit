@@ -28,6 +28,7 @@ while [[ $# -gt 0 ]]; do
 		make -C 0_libft fclean
 		## delete folders
 		rm -rf src_tester/0_libft
+		norminette
 		shift
       	;;
     -1b)
@@ -41,6 +42,7 @@ while [[ $# -gt 0 ]]; do
 		make -C 0_libft fclean
 		## delete folders
 		rm -rf src_tester/0_libft
+		norminette
 		shift
 		;;
     -1c)
@@ -57,6 +59,7 @@ while [[ $# -gt 0 ]]; do
 		make -C 0_libft fclean
 		## delete folders
 		rm -rf src_tester/0_libft
+		norminette
 		shift
       ;;
     -1d)
@@ -70,6 +73,7 @@ while [[ $# -gt 0 ]]; do
 		make -C 0_libft fclean
 		## delete folders
 		rm -rf src_tester/0_libft
+		norminette
 		shift
 		;;
 	-2)
@@ -97,7 +101,7 @@ while [[ $# -gt 0 ]]; do
 		### Delete the folder and clean object files
 			make -C lib/src_lib/printfTester-master fclean
 			rm -rf lib/src_lib/printfTester-master
-
+			norminette
 		shift
 		;;
     -3)
@@ -106,27 +110,25 @@ while [[ $# -gt 0 ]]; do
       ## copy src folder (if needed)
 		find src_tester/gnl_t/tester -name "*.*" -exec cp {} src \;
 		make
-     
+		norminette
       shift
       ;;
     -4)
       # fdf_tester
 	  echo "Running fdf_tester..." # Replace this with your command
-      ## copy src folder (if needed)
+      norminette
       shift
       ;;
     -5)
 		# minitalk_tester
 		echo "Running minitalk_tester..." # Replace this with your command
-		## copy src folder (if needed)
-		# ... your code here ...
+		norminette
 		shift
 		;;
     -6)
 		# pipex_tester
 		echo "Running pipex_tester..." # Replace this with your command
-		## copy src folder (if needed)
-		# ... your code here ...
+		norminette
 		shift
 		;;
     -r)
