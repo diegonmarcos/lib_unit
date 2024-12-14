@@ -3,17 +3,16 @@
 https://github.com/diegonmarcos/LibUnit.git
 ```
 1. SOURCE CODE
-- EXEC
-	- if `not a library`(with a main.c), source codes with **headers** inside of `src`  
+	- EXEC
+		- if `not a library`(with a main.c), source codes with **headers** inside of `src`  
 
-- LIB
-	- if `a library`(wihtout main.c), source codes with **headers** inside of `src_lib`  
-
+	- LIB
+		- if `a library`(wihtout main.c), source codes with **headers** inside of `src_lib`  
 2. RUN
-- run `make`  
-
+		- run `make`  
 
 ---
+
 # ✨ Unleash the Testing Fury! 🌪️
 
 This isn't just a Makefile, it's a **battle-hardened testing arena** for your C projects!  Prepare to push your code to the limit with a barrage of tests, ensuring it's robust, reliable, and ready for anything.
