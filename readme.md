@@ -7,8 +7,8 @@ https://github.com/diegonmarcos/LibUnit.git
 		- if `not a library`(with a main.c), source codes with **headers** inside of `src`  
 	- LIB
 		- if `a library`(wihtout main.c), source codes with **headers** inside of `src_lib`  
-2. RUN
-		- run `make`  
+2. RUN  
+	- run `make`  
 
 ---
 
