@@ -16,10 +16,34 @@ fi
 
 input_dir="$(dirname "$input_file")"
 output_file="$input_dir/$(basename "$1" .c)_clean.c"
-marker="#debug-line"
+single_marker="#debug-line"
+open_marker="<#debug-line"
+close_marker="#debug-line>"
 
-# Process the file with awk, removing lines containing the marker
-awk -v marker="$marker" '!index($0, marker)' "$input_file" > "$output_file"
+# Process the file with awk
+awk -v single_marker="$single_marker" \
+    -v open_marker="$open_marker" \
+    -v close_marker="$close_marker" '
+  {
+    # Block removal start
+    if (index($0, open_marker)) {
+      in_block = 1
+    }
+
+    # Single-line removal and Skip lines within a block
+    if ( (index($0, single_marker) && !index($0,open_marker)) || in_block) {
+        
+        #check if is close marker
+        if (index($0, close_marker)) {
+            in_block = 0
+        }
+        next
+    }
+
+    # Print the line if not within a block and not a single-line comment
+    print
+  }
+' "$input_file" > "$output_file"
 
 # Check if awk command was successful
 if [ $? -ne 0 ]; then
@@ -27,4 +51,4 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-echo "Debug lines removed. Output written to: $output_file"
+echo "Debug lines and blocks removed. Output written to: $output_file"
