@@ -1,3 +1,6 @@
+alias gcl='git clone'
+alias push='git add . && git commit -m "update" && git push'
+alias norm="norminette -R CheckForbiddenSourceHeader CheckDefine"
 function c {
   clang "$1" -o "$(basename "$1" .c).out"
 }
@@ -10,22 +13,20 @@ function cx {
 function ce {
   # --- Clang/gcc flags
   echo -e "\n\n\n##########################"
-  echo -e "##### GCC Flags ##########"
-  echo -e "##########################\n\n"
-  gcc -fsyntax-only -Wall -Wextra "$1"
-
-  echo -e "\n\n\n##########################"
   echo -e "##### Clang Flags ########"
   echo -e "##########################\n\n"
-  
+
+  echo -e "\n##Clang Wall Wextra - fsyntaxOnly"
+  echo -e "############################################\n"
+  clang -fsyntax-only -Wall -Wextra "$1"
+
   echo -e "\n##Clang Fron-End Semantic - fsyntaxOnly"
   echo -e "############################################\n"
-  clang -fsyntax-only -Wformat -Warray-bounds -Wnull-dereference -Wvla -ftrapv "$1"
-  
+  clang -fsyntax-only -Wformat -Warray-bounds -Wnull-dereference -Wvla -ftrapv "$1" 2>&1
+
   echo -e "\n###Clang Static Analyzer"
   echo -e "#########################\n"
-  clang --analyze -Xanalyzer -analyzer-checker=core "$1"
-
+  clang --analyze -Xanalyzer -analyzer-checker=core "$1" 2>&1
 
   # --- Run Valgrind ---
   echo -e "\n\n\n##########################"
@@ -40,6 +41,10 @@ function ce {
   echo -e "##########################\n\n"
   clang "$1" -o "$(basename "$1" .c)_dbA.db.out" -g -fsanitize=address -fsanitize-recover=address
   ./"$(basename "$1" .c)_dbA.db.out" "${@:2}" 2> asan_output.txt || (grep $(basename "$1" .c) asan_output.txt ; rm asan_output.txt)
+
+  rm *.db.out
+  rm *.plist
+
 }
 
 function cd {
