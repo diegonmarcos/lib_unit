@@ -41,3 +41,12 @@ function ce {
   clang "$1" -o "$(basename "$1" .c)_dbA.db.out" -g -fsanitize=address -fsanitize-recover=address
   ./"$(basename "$1" .c)_dbA.db.out" "${@:2}" 2> asan_output.txt || (grep $(basename "$1" .c) asan_output.txt ; rm asan_output.txt)
 }
+
+function cd {
+  # --- LLDB
+  echo -e "\n\n\n##########################"
+  echo -e "##### LLDB ##########"
+  echo -e "##########################\n\n"
+  clang "$1" -o "$(basename "$1" .c)_dbD.db.out" -g
+  lldb ./"$(basename "$1" .c)_dbD.db.out" "${@:2}"
+}
