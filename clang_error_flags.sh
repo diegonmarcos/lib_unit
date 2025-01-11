@@ -18,12 +18,12 @@ function ce {
   echo -e "##### Clang Flags ########"
   echo -e "##########################\n\n"
   
-  echo -e "\n##Clang Fron-End Semanticc - fsyntaxOnly"
-  echo -e "\n############################################\n"
+  echo -e "\n##Clang Fron-End Semantic - fsyntaxOnly"
+  echo -e "############################################\n"
   clang -fsyntax-only -Wformat -Warray-bounds -Wnull-dereference -Wvla -ftrapv "$1"
   
-  echo -e "\n###Clang Static Analyzer\n"
-  echo -e "\n#########################\n"
+  echo -e "\n###Clang Static Analyzer"
+  echo -e "#########################\n"
   clang --analyze -Xanalyzer -analyzer-checker=core "$1"
 
 
