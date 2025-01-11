@@ -17,7 +17,11 @@ function ce {
   echo -e "\n\n\n##########################"
   echo -e "##### Clang Flags ###########"
   echo -e "##########################\n\n"
+  echo -e "\n##Clang Fron-End Semanticc - fsyntaxOnly\n"
   clang -fsyntax-only -Wformat -Warray-bounds -Wnull-dereference -Wvla -ftrapv "$1"
+  echo -e "\n###Clang Static Analyzer\n"
+  clang --analyze -Xanalyzer -analyzer-checker=core "$1"
+
 
   # --- Run Valgrind ---
   echo -e "\n\n\n##########################"
