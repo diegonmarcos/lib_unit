@@ -16,9 +16,9 @@ fi
 
 input_dir="$(dirname "$input_file")"
 output_file="$input_dir/$(basename "$1" .c)_clean.c"
-single_marker="#debug-line"
-open_marker="<#debug-line"
-close_marker="#debug-line>"
+single_marker="#debuging-line"
+open_marker="<#debuging-line"
+close_marker="#debuging-line>"
 
 # Process the file with awk
 awk -v single_marker="$single_marker" \
