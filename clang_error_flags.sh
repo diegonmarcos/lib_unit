@@ -34,22 +34,23 @@ function ce {
   echo -e "##### ASanitizer #########"
   echo -e "##########################\n\n"
   clang "$1" -o "$(basename "$1" .c)_dbA.db.out" -g -fsanitize=address -fsanitize-recover=address
-  ./"$(basename "$1" .c)_dbA.db.out" "${@:2}" 2> asan_output.txt ; (grep "$1" asan_output.txt ; rm asan_output.txt)
+  ./"$(basename "$1" .c)_dbA.db.out" "${@:2}" 2> asan_output.txt ; grep "$1" asan_output.txt
 
   # --- Run Valgrind ---
   echo -e "\n\n\n##########################"
   echo -e "##### Valgrind ###########"
   echo -e "##########################\n\n"
   clang "$1" -o "$(basename "$1" .c)_dbV.db.out" -g
-  valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes -v --log-file=valgrind_output.txt ./"$(basename "$1" .c)_dbV.db.out" "${@:2}" > /dev/null | (grep "$1": valgrind_output.txt ; rm valgrind_output.txt)
+  valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes -v --log-file=valgrind_output.txt ./"$(basename "$1" .c)_dbV.db.out" "${@:2}" > /dev/null | grep "$1": valgrind_output.txt
 
+  rm asan_output.txt
+  rm valgrind_output.txt
   rm *.db.out
   rm *.plist
 
 }
 
-
-function cd {
+function cdb {
   # --- LLDB
   echo -e "\n\n\n##########################"
   echo -e "##### LLDB ##########"
