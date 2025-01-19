@@ -6,10 +6,9 @@
 #    By: dinepomu <dinepomu@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/20 18:47:35 by dinepomu          #+#    #+#              #
-#    Updated: 2024/12/10 13:03:49 by dinepomu         ###   ########.fr        #
+#    Updated: 2025/01/19 14:33:29 by dinepomu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
 
 # **************************************************************************** #
 #                                COLORS                                   	   #
@@ -71,8 +70,10 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 INCLUDES = -I ./src -I ./lib/src_lib
 AR = ar rcs
+RANLIB = ranlib
 DEBUG = -g -fsanitize=address -lasan
 MAKEFLAGS += --no-print-directory
+RM = rm -rf
 
 # **************************************************************************** #
 #                                 RULES                                        #
@@ -82,8 +83,8 @@ all: $(NAME)
 
 $(NAME):	
 		@$(MAKE) hello
-		@$(MAKE) lib 
-		@$(MAKE) main 
+		@$(MAKE) lib
+		@$(MAKE) main
 		@$(MAKE) run
 
 
@@ -106,7 +107,7 @@ $(LIB_OBJ_DIR)/%.o:	$(LIB_SRC_DIR)/%.c $(LIB_INCL)
 $(LIB):	$(LIB_OBJ)
 		@echo "\n$(GREEN) Created Objects: *.o ✓ $(DEF_COLOR)"
 		@$(AR) $(LIB) $(LIB_OBJ)
-		@echo "$(GREEN) Created Executable: $(LIB) ✓ $(DEF_COLOR)\n"
+		@echo "$(GREEN) Created Executable: $(LIB) "(•̀ᴗ•́)و  $(DEF_COLOR)\n"
 		@$(MAKE) incl_lib
 
 main: $(EXEC)
@@ -161,13 +162,13 @@ incl_main:
 
 clean:
 		@rm -rf $(LIB_OBJ_DIR) $(MAIN_OBJ_DIR)
-		@echo "\n${BLUE} --- $(RED)Objects deleted  ${BLUE}---$(DEF_COLOR)\n"
+		@echo "\n${BLUE} --- $(RED)Objects deleted 	¯\_(ツ)_/¯ ${BLUE}---$(DEF_COLOR)\n"
 
 fclean:	clean
 		@rm -f $(LIB) $(EXEC)
 		@rm -rf $(BIN_DIR)
 		@rm -rf lib/incl_lib incl
-		@echo "\n${BLUE} --- $(RED)Objects, SymHeaders and executable deleted ${BLUE} ---$(DEF_COLOR)\n"
+		@echo "\n${BLUE} --- $(RED)Objects, SymHeaders and executable deleted 	"	(╯°□°）╯︵ ┻━┻  ${BLUE} ---$(DEF_COLOR)\n"
 
 re:	fclean all
 
